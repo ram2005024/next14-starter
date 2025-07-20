@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --bg: #0d0c22;
+  --text: white;
+  --textSoft: #e5e5e5;
+  --btn: #3673fd;
+  --bgSoft: #2d2b42;
+}
+body {
+  width: 100vw;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--text);
+}
+a {
+  text-decoration: none;
+  color: var(--text);
+}
+.container {
+  height: 100vh;
+  width: 1336px;
+  padding: 0 0 50px 50px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
