@@ -1,0 +1,22 @@
+.container {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.container p {
+  font-size: 12px;
+  color: gray;
+}
+.container p:first-of-type {
+  font-size: 18px;
+  font-weight: bold;
+}
+@media (max-width: 681px) {
+  .container {
+    gap: 12px;
+  }
+  .container p {
+    font-size: 14px;
+  }
+}

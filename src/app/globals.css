@@ -12,6 +12,7 @@
 }
 body {
   width: 100vw;
+  overflow-x: hidden;
   min-height: 100vh;
   background-color: var(--bg);
   color: var(--text);
@@ -21,11 +22,43 @@ a {
   color: var(--text);
 }
 .container {
-  height: 100vh;
-  width: 1336px;
-  padding: 0 0 50px 50px;
-  margin: auto;
+  height: 100%;
+  position: relative;
+  width: 1200px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+}
+@media (max-width: 1366px) {
+  .container {
+    width: 1200px;
+  }
+}
+@media (max-width: 1200px) {
+  .container {
+    width: 1024px;
+  }
+}
+@media (max-width: 1027px) {
+  .container {
+    width: 900px;
+  }
+}
+@media (max-width: 906px) {
+  .container {
+    width: 680px;
+  }
+}
+@media (max-width: 680px) {
+  .container {
+    width: 480px;
+  }
+}
+@media (max-width: 482px) {
+  .container {
+    width: 250px;
+    padding: 0 0 10px 10px;
+    margin: 0px;
+  }
 }

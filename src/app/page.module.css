@@ -1,0 +1,70 @@
+.container {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+.imageContainer {
+  position: relative;
+  height: 600px;
+  width: 700px;
+}
+.textContainer {
+  display: flex;
+  width: 500px;
+  flex-direction: column;
+  gap: 20px;
+}
+.textContainer h1 {
+  font-size: 88px;
+  font-weight: bold;
+}
+.textContainer h1 span {
+  color: red;
+}
+.textContainer p {
+  font-size: 18px;
+  color: var(--text);
+  line-height: 24px;
+}
+.buttonContainer {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+.buttonContainer button {
+  height: 50px;
+  width: 100px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.buttonContainer > button:first-of-type {
+  background-color: var(--btn);
+  color: white;
+}
+@media (max-width: 681px) {
+  .textContainer h1 {
+    font-size: 50px;
+  }
+  .imageContainer {
+    display: none;
+  }
+}
+.banner {
+  position: relative;
+  height: 50px;
+  width: 460px;
+}
+.bannerImage {
+  filter: grayscale(1);
+}
+@media (max-width: 482px) {
+  .textContainer {
+    width: 200px;
+  }
+}
+@media (max-width: 389px) {
+  .banner {
+    width: 300px;
+  }
+}
