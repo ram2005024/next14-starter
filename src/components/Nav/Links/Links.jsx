@@ -5,7 +5,7 @@ import styles from "./Links.module.css";
 import NavLink from "../NavLink/NavLink";
 import { useState } from "react";
 const Links = () => {
-  const [isOpen, setOpen] = useState(true);
+  const [isOpen, setOpen] = useState(false);
   const [isAdmin, setAdmin] = useState(false);
   const [session, setSession] = useState(true);
   const link = [
@@ -14,12 +14,12 @@ const Links = () => {
       path: "/",
     },
     {
-      title: "Contact",
-      path: "/contact",
-    },
-    {
       title: "About us",
       path: "/about",
+    },
+    {
+      title: "Contact",
+      path: "/contact",
     },
     {
       title: "Blog",

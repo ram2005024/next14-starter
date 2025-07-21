@@ -4,12 +4,34 @@ import Image from "next/image";
 const Page = () => {
   return (
     <div className={styles.container}>
+      <div className={styles.textContainer}>
+        <h2>About Company</h2>
+        <h1>We create a simple way to interact with the customer.</h1>
+        <p className={styles.aboutText}>
+          At Cyrus, under Shekhar's vision, we specialize in building flawless
+          UI experiences tailored for tech companies. Our interfaces are
+          intuitive, visually striking, and performance-driven—transforming
+          complexity into simplicity. We redefine user engagement by designing
+          smooth digital journeys that not only look great but function
+          seamlessly across platforms. Let’s make tech feel effortless
+        </p>
+        <div className={styles.experienceContainer}>
+          <div className={styles.experienceBox}>
+            <p>10 K+</p>
+            <p>Year Experince</p>
+          </div>
+          <div className={styles.experienceBox}>
+            <p>10 K+</p>
+            <p>Skill oriented</p>
+          </div>
+          <div className={styles.experienceBox}>
+            <p>20 K+</p>
+            <p>Expertise</p>
+          </div>
+        </div>
+      </div>
       <div className={styles.imageContainer}>
-        <Image
-          src="https://cdn.pixabay.com/photo/2018/01/14/23/12/nature-3082832_1280.jpg"
-          alt="about-image"
-          fill
-        />
+        <Image src="/about.png" className={styles.aboutImage} fill />
       </div>
     </div>
   );
