@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  gap: 50px;
+  width: 100%;
+  justify-content: flex-start;
+}
+.imageCont {
+  height: calc(100vh - 200px);
+  width: 400px;
+  position: relative;
+}
+.textContainer {
+  display: flex;
+  flex-direction: column;
+  width: 500px;
+  gap: 20px;
+}
+.textContainer h1 {
+  font-size: 42px;
+  font-weight: 600;
+}
+
+.textContainer p {
+  font-weight: 600;
+}
+.myImage {
+  object-fit: cover;
+}
+@media (max-width: 490px) {
+  .imageCont {
+    display: none;
+  }
+}

@@ -1,0 +1,55 @@
+.container {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  align-items: center;
+}
+.imageContainer {
+  position: relative;
+  height: 600px;
+  width: 580px;
+}
+.formContainer {
+  width: 50%;
+}
+.myForm {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.myForm input {
+  padding: 15px;
+  color: whitesmoke;
+  background-color: #2d2b42;
+  border: none;
+  border-radius: 5px;
+}
+.myForm textarea {
+  padding: 15px;
+  color: whitesmoke;
+  background-color: #2d2b42;
+  border-radius: 10px;
+  border: none;
+}
+.myForm button {
+  padding: 15px;
+  text-align: center;
+  background-color: var(--btn);
+  border-radius: 10px;
+  color: var(--text);
+  height: 60px;
+  font-weight: 700;
+  margin-top: 15px;
+  cursor: pointer;
+}
+@media (max-width: 682px) {
+  .imageContainer {
+    display: none;
+  }
+  .formContainer {
+    width: 70%;
+  }
+}
+.contactImage {
+  object-fit: contain;
+}

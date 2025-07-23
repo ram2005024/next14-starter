@@ -1,0 +1,28 @@
+.authorField {
+  display: flex;
+  gap: 8px;
+}
+.author {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.author span:first-of-type {
+  font-weight: 600;
+  color: gray;
+}
+.author span {
+  font-size: 14px;
+}
+.publishedDate {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.publishedDate span:first-of-type {
+  font-weight: 600;
+  color: gray;
+}
+.publishedDate span {
+  font-size: 14px;
+}

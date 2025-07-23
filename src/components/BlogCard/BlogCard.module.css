@@ -1,0 +1,49 @@
+.imageContainer {
+  height: 400px;
+  width: 100%;
+  position: relative;
+}
+.myImage {
+  object-fit: cover;
+}
+.imagePart {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.imagePart span {
+  font-size: 14px;
+  /* position: absolute;
+  right: -10px; */
+  writing-mode: vertical-lr;
+}
+.textPart {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+.textPart span:first-of-type {
+  font-size: 19px;
+  font-weight: 600;
+  color: white;
+}
+.textPart span {
+  color: gray;
+  font-size: 15px;
+}
+.textPart .button {
+  text-transform: uppercase;
+  text-decoration: underline;
+  text-align: start;
+  cursor: pointer;
+  width: max-content;
+  background-color: transparent;
+  border: none;
+  color: var(--text);
+}
+.blogCard {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+  gap: 15px;
+}
