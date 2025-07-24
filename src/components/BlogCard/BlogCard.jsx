@@ -4,17 +4,17 @@ import Image from "next/image";
 import Link from "next/link";
 const BlogCard = ({ image, blogDataObject }) => {
   return (
-    <div className={styles.blogCard} id={blogDataObject.id}>
+    <div className={styles.blogCard} id={blogDataObject.userId}>
       <div className={styles.imagePart}>
         <div className={styles.imageContainer}>
           <Image src={image} fill className={styles.myImage} />
         </div>
-        <span>{blogDataObject.publishedDate}</span>
+        <span>19.02.2025</span>
       </div>
       <div className={styles.textPart}>
         <span>{blogDataObject.title}</span>
-        <span>{blogDataObject.des}</span>
-        <Link className={styles.button} href={`blog/${blogDataObject.id}`}>
+        <span>{blogDataObject.description}</span>
+        <Link className={styles.button} href={`blog/${blogDataObject.slug}`}>
           Read More
         </Link>
       </div>

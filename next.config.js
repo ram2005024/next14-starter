@@ -6,6 +6,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "cdn.pixabay.com",
       },
+      {
+        protocol: "https",
+        hostname: "scontent.fktm17-1.fna.fbcdn.net",
+      },
     ],
   },
 };

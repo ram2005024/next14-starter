@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./postUser.module.css";
 import Image from "next/image";
-import { getUsers } from "@/lib/post";
+import { getUser } from "@/lib/data";
 // ***Fetching data using an api database
 // const get = async (userId) => {
 //   const userData = await fetch(
@@ -16,10 +16,15 @@ import { getUsers } from "@/lib/post";
 //   return await userData.json();
 // };
 const PostUser = async ({ postData }) => {
-  const Data = await getUsers(postData?.id);
+  const Data = await getUser(postData?.userId);
   return (
     <div className={styles.authorField}>
-      <Image src="/noavatar.png" height={50} width={50} />
+      <Image
+        src={Data?.img ? Data?.img : "/noavatar.png"}
+        height={50}
+        width={50}
+        className={styles.authorImage}
+      />
       <div className={styles.author}>
         <span>Author</span>
         <span>{Data?.userName}</span>
