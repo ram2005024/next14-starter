@@ -8,11 +8,14 @@ export const metadata = {
 };
 //Use api for fetching data
 const page = async () => {
-  const blogObject = await fetch("http://localhost:3000/api/blog", {
-    next: {
-      revalidate: 0,
-    },
-  });
+  const blogObject = await fetch(
+    `${process.env.NEXT_PUBLIC_API_URL}/api/blog`,
+    {
+      next: {
+        revalidate: 0,
+      },
+    }
+  );
   if (!blogObject.ok)
     throw new Error("Sorry data couldn't be fetched due to an error occured!");
   const blogDataObject = await blogObject.json();
