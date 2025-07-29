@@ -16,7 +16,7 @@ const Page = () => {
           UI experiences tailored for tech companies. Our interfaces are
           intuitive, visually striking, and performance-driven—transforming
           complexity into simplicity. We redefine user engagement by designing
-          smooth digital journeys that not only look great but function
+          smooth digital journeys that not onl  y look great but function
           seamlessly across platforms. Let’s make tech feel effortless
         </p>
         <div className={styles.experienceContainer}>
