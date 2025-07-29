@@ -1,7 +1,7 @@
 import { connectionToDB } from "@/lib/connectionToDB";
 import { NextResponse } from "next/server";
 import { Post } from "@/lib/models";
-export const GET = async ({ params }) => {
+export const GET = async (request, { params }) => {
   const { slug } = params;
 
   try {
