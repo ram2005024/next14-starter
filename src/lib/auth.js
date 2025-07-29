@@ -3,10 +3,11 @@ import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
 import { connectionToDB } from "./connectionToDB";
 import { User } from "./models";
-import CredentialsProviders from "next-auth/providers/credentials";
+import CredentialsProvider from "next-auth/providers/credentials";
 import { authConfig } from "./auth.config";
 const login = async (credential) => {
   try {
+    await connectionToDB();
     const user = await User.findOne({ userName: credential.username });
     if (!user) {
       throw new Error("Wrong credentials");
@@ -32,12 +33,13 @@ export const {
       clientId: process.env.GITHUB_ID,
       clientSecret: process.env.GITHUB_KEY,
     }),
-    CredentialsProviders({
-      async authorize(credential) {
+    CredentialsProvider({
+      async authorize(credentials) {
         try {
-          const user = await login(credential);
+          const user = await login(credentials);
           return user;
-        } catch {
+        } catch (error) {
+          console.log("Authorize error:", error);
           return null;
         }
       },
