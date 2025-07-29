@@ -1,4 +1,4 @@
-import Nextauth from "next-auth";
+import NextAuth from "next-auth";
 import GitHub from "next-auth/providers/github";
 import bcrypt from "bcryptjs";
 import { connectionToDB } from "./connectionToDB";
@@ -25,7 +25,7 @@ export const {
   signIn,
   signOut,
   auth,
-} = Nextauth({
+} = NextAuth({
   ...authConfig,
   providers: [
     GitHub({
@@ -43,6 +43,7 @@ export const {
       },
     }),
   ],
+  secret: process.env.AUTH_SECRET,
   callbacks: {
     async signIn({ account, profile }) {
       if (account?.provider === "github") {
