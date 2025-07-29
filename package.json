@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@netlify/next": "^1.4.9",
+    "@netlify/plugin-nextjs": "^5.11.6",
     "bcryptjs": "^3.0.2",
     "dotenv": "^17.2.0",
     "install": "^0.13.0",
@@ -23,6 +23,7 @@
     "styled-jsx": "^5.1.7"
   },
   "devDependencies": {
+    "@netlify/next": "^1.4.9",
     "eslint": "^8",
     "eslint-config-next": "14.0.4"
   }
