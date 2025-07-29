@@ -3,30 +3,45 @@ import styles from "./slug.module.css";
 import Image from "next/image";
 import PostUser from "@/components/postUser/postUser";
 import { getPost } from "@/lib/data";
+export const generateMetadata = async ({ params }) => {
+  const { slug } = params;
+  const post = await getPost({ slug });
+  if (!post) {
+    return {
+      title: "Page doesnot exist",
+      description: "No such page exist",
+    };
+  }
+  return {
+    title: `${post.slug}`,
+    description: `${post.description}`,
+  };  
+};
 // ***Fetching Api with the database***
-// const get = async (params) => {
-//   const myData = await fetch(
-//     `https://jsonplaceholder.typicode.com/posts/${params}`
-//   );
-//   if (!myData.ok) throw new Error("Errored while fetching the slug data.");
-//   return await myData.json();
-// };
+const getData = async (slug) => {
+  const res = await fetch(`http://localhost:3001/api/blog/${slug}`);
+
+  if (!res.ok) {
+    throw new Error("Something went wrong");
+  }
+
+  return res.json();
+};
 const page = async ({ params }) => {
   const { slug } = params;
-  console.log("Slug received:", slug); //
-  const postData = await getPost({ slug });
+  const postData = await getData(slug);
   return (
     <div className={styles.container}>
       <div className={styles.imageCont}>
         <Image
-          src={postData.img}
+          src={postData?.img}
           alt="slug_image"
           fill
           className={styles.myImage}
         />
       </div>
       <div className={styles.textContainer}>
-        <h1>{postData.title}</h1>
+        <h1>{postData?.title}</h1>
         <Suspense fallback={<div>Loading, please wait</div>}>
           <PostUser postData={postData} />
         </Suspense>

@@ -1,13 +1,12 @@
-"use Client";
+"use client";
 import { FaBars } from "react-icons/fa";
 import React from "react";
 import styles from "./Links.module.css";
 import NavLink from "../NavLink/NavLink";
 import { useState } from "react";
-const Links = () => {
+import { handleLogout } from "@/lib/action";
+const Links = ({ session }) => {
   const [isOpen, setOpen] = useState(false);
-  const [isAdmin, setAdmin] = useState(false);
-  const [session, setSession] = useState(true);
   const link = [
     {
       title: "Home",
@@ -30,13 +29,17 @@ const Links = () => {
     <div className={styles.container}>
       <div className={styles.Linkcontainer}>
         {link.map((link) => (
-          <NavLink items={link} />
+          <NavLink items={link} key={link.title} />
         ))}
 
-        {session ? (
+        {session?.user ? (
           <>
-            {isAdmin && <NavLink items={{ title: "Admin", path: "/admin" }} />}
-            <button className={styles.logoutBtn}>LogOut</button>
+            {session?.user.isAdmin && (
+              <NavLink items={{ title: "Admin", path: "/admin" }} />
+            )}
+            <form action={handleLogout}>
+              <button className={styles.logoutBtn}>LogOut</button>
+            </form>
           </>
         ) : (
           <NavLink items={{ title: "Login", path: "/login" }} />

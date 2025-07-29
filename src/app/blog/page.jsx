@@ -1,24 +1,28 @@
 import React from "react";
 import styles from "./page.module.css";
 import BlogCard from "@/components/BlogCard/BlogCard";
-import { getPosts } from "@/lib/data";
+// import { getPosts } from "@/lib/data";
+export const metadata = {
+  title: "Blog page",
+  description: "Next.js blog   page",
+};
 //Use api for fetching data
 const page = async () => {
-  //   const blogObject = await fetch("https://jsonplaceholder.typicode.com/posts", {
-  //     next: {
-  //       revalidate: 3600,
-  //     },
-  //   });
-  //   if (!blogObject.ok)
-  //     throw new Error("Sorry data couldn't be fetched due to an error occured!");
-  // const blogDataObject = await blogObject.json();
+  const blogObject = await fetch("http://localhost:3001/api/blog", {
+    next: {
+      revalidate: 3600,
+    },
+  });
+  if (!blogObject.ok)
+    throw new Error("Sorry data couldn't be fetched due to an error occured!");
+  const blogDataObject = await blogObject.json();
   // ** Using data without an endpoint api**
-  const postsData = await getPosts();
-  console.log(postsData);
+  // const blogDataObject = await getPosts();
+  // console.log(blogDataObject);
 
   return (
     <div className={styles.container}>
-      {postsData.map((items) => (
+      {blogDataObject.map((items) => (
         <BlogCard
           image={
             items.img

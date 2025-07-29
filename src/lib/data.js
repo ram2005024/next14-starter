@@ -1,5 +1,6 @@
 import { connectionToDB } from "./connectionToDB";
 import { Post, User } from "./models";
+import { unstable_cache as noStore } from "next/cache";
 export const getPost = async ({ slug }) => {
   await connectionToDB();
   const post = await Post.findOne({ slug });
@@ -17,6 +18,7 @@ export const getPosts = async () => {
 };
 export const getUsers = async () => {
   try {
+    noStore();
     await connectionToDB();
     const users = await User.find();
     return users;
@@ -26,12 +28,22 @@ export const getUsers = async () => {
   }
 };
 export const getUser = async (id) => {
+  let user = {
+    userName: "Anonymous",
+    img: "/noavatar.png",
+  };
+
   try {
     await connectionToDB();
-    const user = await User.findById(id);
-    return user;
+
+    const foundUser = await User.findById(id);
+    if (foundUser) {
+      user = foundUser;
+    }
   } catch (error) {
-    console.log(error);
-    throw new Error("Error fetching the user details");
+    console.log("Error fetching user:", error);
+    // Optional: log more specific error messages
   }
+
+  return user;
 };

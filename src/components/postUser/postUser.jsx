@@ -20,7 +20,7 @@ const PostUser = async ({ postData }) => {
   return (
     <div className={styles.authorField}>
       <Image
-        src={Data?.img ? Data?.img : "/noavatar.png"}
+        src={Data?.img}
         height={50}
         width={50}
         className={styles.authorImage}
@@ -30,7 +30,7 @@ const PostUser = async ({ postData }) => {
         <span>{Data?.userName}</span>
       </div>
       <div className={styles.publishedDate}>
-        <span>{postData?.publishedDate}</span>
+        <span>{new Date(postData.createdAt).toLocaleDateString()}</span>
       </div>
     </div>
   );

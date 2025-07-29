@@ -16,7 +16,6 @@ const userSchema = new mongoose.Schema(
     password: {
       type: String,
       unique: true,
-      required: true,
     },
     isAdmin: {
       type: Boolean,
@@ -28,7 +27,6 @@ const userSchema = new mongoose.Schema(
     id: {
       type: String,
       unique: true,
-      required: true,
     },
   },
   { timestamps: true }

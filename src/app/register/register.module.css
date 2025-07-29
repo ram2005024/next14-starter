@@ -1,0 +1,11 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 200px);
+}
+.formContainer {
+  padding: 40px;
+  border-radius: 10px;
+  background: var(--bgSoft);
+}
