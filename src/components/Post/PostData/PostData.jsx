@@ -6,7 +6,6 @@ import Image from "next/image";
 import DeleteForm from "@/components/DeleteForm/DeleteForm";
 const PostData = async () => {
   const posts = await getPosts();
-
   return (
     <div className={styles.container}>
       <h2>Posts</h2>

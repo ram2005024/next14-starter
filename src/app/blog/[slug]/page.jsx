@@ -15,11 +15,11 @@ export const generateMetadata = async ({ params }) => {
   return {
     title: `${post.slug}`,
     description: `${post.description}`,
-  };  
+  };
 };
 // ***Fetching Api with the database***
 const getData = async (slug) => {
-  const res = await fetch(`http://localhost:3001/api/blog/${slug}`);
+  const res = await fetch(`http://localhost:3000/api/blog/${slug}`);
 
   if (!res.ok) {
     throw new Error("Something went wrong");

@@ -8,7 +8,7 @@ export const metadata = {
 };
 //Use api for fetching data
 const page = async () => {
-  const blogObject = await fetch("http://localhost:3001/api/blog", {
+  const blogObject = await fetch("http://localhost:3000/api/blog", {
     next: {
       revalidate: 0,
     },
