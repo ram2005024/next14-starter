@@ -20,11 +20,11 @@ const Home = () => {
           <button>Contact us</button>
         </div>
         <div className={styles.banner}>
-          <Image src="/brands.png" fill className={styles.bannerImage} />
+          <Image src="/brands.png" fill className={styles.bannerImage} alt="" />
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <Image src="/hero.gif" className={styles.heroImage} fill />
+        <Image src="/hero.gif" className={styles.heroImage} fill alt="" />
       </div>
     </div>
   );

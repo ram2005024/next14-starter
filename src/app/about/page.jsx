@@ -12,12 +12,12 @@ const Page = () => {
         <h2>About Company</h2>
         <h1>We create a simple way to interact with the customer.</h1>
         <p className={styles.aboutText}>
-          At Cyrus, under Shekhar's vision, we specialize in building flawless
+          At Cyrus, under Shekhar`s vision, we specialize in building flawless
           UI experiences tailored for tech companies. Our interfaces are
           intuitive, visually striking, and performance-driven—transforming
           complexity into simplicity. We redefine user engagement by designing
-          smooth digital journeys that not onl  y look great but function
-          seamlessly across platforms. Let’s make tech feel effortless
+          smooth digital journeys that not onl y look great but function
+          seamlessly across platforms. Let make tech feel effortless
         </p>
         <div className={styles.experienceContainer}>
           <div className={styles.experienceBox}>
@@ -35,7 +35,12 @@ const Page = () => {
         </div>
       </div>
       <div className={styles.imageContainer}>
-        <Image src="/about.png" className={styles.aboutImage} fill />
+        <Image
+          src="/about.png"
+          className={styles.aboutImage}
+          fill
+          alt="image"
+        />
       </div>
     </div>
   );

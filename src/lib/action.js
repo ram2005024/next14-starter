@@ -35,7 +35,7 @@ export const newUser = async (myForm) => {
   revalidatePath("/blog");
   revalidatePath("/admin");
 };
-export const deleteAction = async (id, formData) => {
+export const deleteAction = async (id) => {
   try {
     // const { id } = Object.fromEntries(formData);
     await connectionToDB();
@@ -46,7 +46,7 @@ export const deleteAction = async (id, formData) => {
     console.log("Error deleting the post");
   }
 };
-export const deleteUser = async (id, formData) => {
+export const deleteUser = async (id) => {
   try {
     // const { id } = Object.fromEntries(formData);
     await connectionToDB();

@@ -7,7 +7,7 @@ const BlogCard = ({ image, blogDataObject }) => {
     <div className={styles.blogCard}>
       <div className={styles.imagePart}>
         <div className={styles.imageContainer}>
-          <Image src={image} fill className={styles.myImage} />
+          <Image src={image} fill className={styles.myImage} alt="image" />
         </div>
         <span>{new Date(blogDataObject.createdAt).toLocaleDateString()}</span>
       </div>

@@ -24,6 +24,7 @@ const PostUser = async ({ postData }) => {
         height={50}
         width={50}
         className={styles.authorImage}
+        alt=""
       />
       <div className={styles.author}>
         <span>Author</span>
