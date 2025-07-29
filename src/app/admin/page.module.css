@@ -16,4 +16,7 @@
   .firstRow {
     flex-direction: column;
   }
+  .secondRow {
+    flex-direction: column;
+  }
 }
