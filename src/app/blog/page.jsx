@@ -10,7 +10,7 @@ export const metadata = {
 const page = async () => {
   const blogObject = await fetch("http://localhost:3001/api/blog", {
     next: {
-      revalidate: 3600,
+      revalidate: 0,
     },
   });
   if (!blogObject.ok)
@@ -24,6 +24,7 @@ const page = async () => {
     <div className={styles.container}>
       {blogDataObject.map((items) => (
         <BlogCard
+          key={items?._id}
           image={
             items.img
               ? items.img

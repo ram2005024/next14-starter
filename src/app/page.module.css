@@ -60,7 +60,12 @@
 }
 @media (max-width: 482px) {
   .textContainer {
-    width: 200px;
+    width: 400px;
+  }
+}
+@media (max-width: 329px) {
+  .textContainer {
+    width: 250px;
   }
 }
 @media (max-width: 389px) {

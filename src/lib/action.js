@@ -6,24 +6,55 @@ import { User } from "./models";
 import bcrypt from "bcryptjs";
 import { signIn, signOut } from "./auth";
 export const serverAction = async (myForm) => {
-  const { title, description, slug, userId } = Object.fromEntries(myForm);
+  const { title, description, slug, img, userId } = Object.fromEntries(myForm);
   await connectionToDB();
   const post = new Post({
     title,
     description,
     slug,
+    img,
     userId,
   });
   await post.save();
   revalidatePath("/blog");
+  revalidatePath("/admin");
 };
-export const deleteAction = async (formData) => {
+export const newUser = async (myForm) => {
+  const { userName, email, password, img, id, isAdmin } =
+    Object.fromEntries(myForm);
+  await connectionToDB();
+  const newuser = new User({
+    userName: userName,
+    email: email,
+    img: img,
+    password: password,
+    id: id,
+    isAdmin: isAdmin,
+  });
+  await newuser.save();
+  revalidatePath("/blog");
+  revalidatePath("/admin");
+};
+export const deleteAction = async (id, formData) => {
   try {
-    const id = formData.get("id");
+    // const { id } = Object.fromEntries(formData);
     await connectionToDB();
     await Post.findByIdAndDelete(id);
+    revalidatePath("/blog");
+    revalidatePath("/admin");
   } catch (error) {
     console.log("Error deleting the post");
+  }
+};
+export const deleteUser = async (id, formData) => {
+  try {
+    // const { id } = Object.fromEntries(formData);
+    await connectionToDB();
+    await User.findByIdAndDelete(id);
+    revalidatePath("/blog");
+    revalidatePath("/admin");
+  } catch (error) {
+    console.log("Error deleting the user");
   }
 };
 export const handleSignIn = async () => {

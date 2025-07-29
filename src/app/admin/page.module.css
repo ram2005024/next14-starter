@@ -1,0 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  width: 100%;
+}
+.firstRow {
+  display: flex;
+  gap: 50px;
+}
+.secondRow {
+  display: flex;
+  gap: 30px;
+}
+@media (max-width: 482px) {
+  .firstRow {
+    flex-direction: column;
+  }
+}

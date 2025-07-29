@@ -25,3 +25,8 @@
   font-weight: 400;
   cursor: pointer;
 }
+@media (max-width: 492px) {
+  .myForm input {
+    width: 100%;
+  }
+}

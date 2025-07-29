@@ -57,7 +57,14 @@ a {
 }
 @media (max-width: 482px) {
   .container {
-    width: 250px;
+    width: 380px;
+    padding: 0 0 10px 10px;
+    margin: 0px;
+  }
+}
+@media (max-width: 380px) {
+  .container {
+    width: 360px;
     padding: 0 0 10px 10px;
     margin: 0px;
   }

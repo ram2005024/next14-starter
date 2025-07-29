@@ -11,4 +11,3 @@ export const GET = async (request) => {
     return NextResponse.json({ error: "Error fetching the data", status: 500 });
   }
 };
-

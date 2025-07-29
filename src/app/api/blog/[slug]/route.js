@@ -6,7 +6,7 @@ export const GET = async (request, { params }) => {
 
   try {
     await connectionToDB();
-    const post = await Post.findOne({ slug });
+    const post = await Post.findOne({ slug: slug });
 
     if (!post) {
       return NextResponse.json({ error: "Post not found" }, { status: 404 });

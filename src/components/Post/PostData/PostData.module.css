@@ -1,0 +1,34 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 45%;
+}
+.container h2 {
+  font-size: 28px;
+  font-weight: 100;
+}
+.postContainer {
+  display: flex;
+  justify-content: space-between;
+}
+.postBody {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.postBody span {
+  font-size: 14px;
+}
+.postImage {
+  border-radius: 50%;
+}
+@media (max-width: 482px) {
+  .container h2 {
+    font-size: 16px;
+  }
+  .postContainer {
+    justify-content: unset;
+    gap: 10px;
+  }
+}

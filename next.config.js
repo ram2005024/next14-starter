@@ -11,7 +11,15 @@ const nextConfig = {
       },
       {
         protocol: "https",
+        hostname: "pixabay.com",
+      },
+      {
+        protocol: "https",
         hostname: "scontent.fktm17-1.fna.fbcdn.net",
+      },
+      {
+        protocol: "https",
+        hostname: "avatars.githubusercontent.com",
       },
     ],
   },

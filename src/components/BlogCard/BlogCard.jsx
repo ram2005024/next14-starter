@@ -4,12 +4,12 @@ import Image from "next/image";
 import Link from "next/link";
 const BlogCard = ({ image, blogDataObject }) => {
   return (
-    <div className={styles.blogCard} id={blogDataObject.userId}>
+    <div className={styles.blogCard}>
       <div className={styles.imagePart}>
         <div className={styles.imageContainer}>
           <Image src={image} fill className={styles.myImage} />
         </div>
-        <span>19.02.2025</span>
+        <span>{new Date(blogDataObject.createdAt).toLocaleDateString()}</span>
       </div>
       <div className={styles.textPart}>
         <span>{blogDataObject?.title}</span>

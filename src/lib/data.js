@@ -1,6 +1,6 @@
 import { connectionToDB } from "./connectionToDB";
 import { Post, User } from "./models";
-import { unstable_cache as noStore } from "next/cache";
+import { revalidatePath } from "next/cache";
 export const getPost = async ({ slug }) => {
   await connectionToDB();
   const post = await Post.findOne({ slug });
@@ -18,32 +18,33 @@ export const getPosts = async () => {
 };
 export const getUsers = async () => {
   try {
-    noStore();
+    revalidatePath("/admin");
+    revalidatePath("/blog");
     await connectionToDB();
     const users = await User.find();
+    console.log(users);
     return users;
   } catch (error) {
     console.log(error);
     throw new Error("Error fetching the users");
   }
 };
-export const getUser = async (id) => {
-  let user = {
-    userName: "Anonymous",
-    img: "/noavatar.png",
-  };
-
+export const getUser = async (userId) => {
   try {
     await connectionToDB();
 
-    const foundUser = await User.findById(id);
-    if (foundUser) {
-      user = foundUser;
+    const foundUser = await User.findOne({ id: userId });
+    console.log(foundUser);
+    if (!foundUser) {
+      const user = {
+        userName: "Anonymous",
+        img: "/noavatar.png",
+      };
+      return user;
     }
+
+    return foundUser;
   } catch (error) {
     console.log("Error fetching user:", error);
-    // Optional: log more specific error messages
   }
-
-  return user;
 };

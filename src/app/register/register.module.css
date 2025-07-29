@@ -9,3 +9,8 @@
   border-radius: 10px;
   background: var(--bgSoft);
 }
+@media (max-width: 487px) {
+  .formContainer {
+    padding: 20px;
+  }
+}

@@ -59,3 +59,15 @@
     font-size: 42px;
   }
 }
+@media (max-width: 488px) {
+  .textContainer h1 {
+    text-align: center;
+    font-size: 18px;
+  }
+}
+@media (max-width: 488px) {
+  .aboutText {
+    text-align: center;
+    font-size: 14px;
+  }
+}
