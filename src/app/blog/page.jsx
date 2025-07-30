@@ -12,7 +12,6 @@ const page = async () => {
     `${process.env.NEXT_PUBLIC_API_URL}/api/blog`,
     {
       cache: "no-store",
-      
     }
   );
   if (!blogObject.ok)
@@ -27,11 +26,7 @@ const page = async () => {
       {blogDataObject.map((items) => (
         <BlogCard
           key={items?._id}
-          image={
-            items.img
-              ? items.img
-              : "https://cdn.pixabay.com/photo/2017/03/12/16/18/madrid-2137365_1280.jpg"
-          }
+          image={items.img ? items.img : "/noavatar.png"}
           blogDataObject={items}
         />
       ))}
