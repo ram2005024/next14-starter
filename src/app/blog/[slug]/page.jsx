@@ -41,7 +41,7 @@ const page = async ({ params }) => {
     <div className={styles.container}>
       <div className={styles.imageCont}>
         <Image
-          src={postData?.img}
+          src={postData?.img || "/noavatar.png"}
           alt="slug_image"
           fill
           className={styles.myImage}
