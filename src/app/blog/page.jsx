@@ -12,6 +12,7 @@ const page = async () => {
     `${process.env.NEXT_PUBLIC_API_URL}/api/blog`,
     {
       cache: "no-store",
+      
     }
   );
   if (!blogObject.ok)
