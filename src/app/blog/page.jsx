@@ -11,9 +11,7 @@ const page = async () => {
   const blogObject = await fetch(
     `${process.env.NEXT_PUBLIC_API_URL}/api/blog`,
     {
-      next: {
-        revalidate: 0,
-      },
+      cache: "no-store",
     }
   );
   if (!blogObject.ok)
