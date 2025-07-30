@@ -89,6 +89,7 @@ export const registerAction = async (previousState, formData) => {
     return { success: true };
   } catch (error) {
     console.log(error);
+    return { error: `${error} happened` };
   }
 };
 export const login = async (previousState, formData) => {

@@ -1,4 +1,5 @@
 import mongoose from "mongoose";
+import { v4 as uuidv4 } from "uuid";
 const userSchema = new mongoose.Schema(
   {
     userName: {
@@ -15,7 +16,6 @@ const userSchema = new mongoose.Schema(
     },
     password: {
       type: String,
-      unique: true,
     },
     isAdmin: {
       type: Boolean,
@@ -26,7 +26,7 @@ const userSchema = new mongoose.Schema(
     },
     id: {
       type: String,
-      unique: true,
+      default: uuidv4,
     },
   },
   { timestamps: true }
