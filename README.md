@@ -14,7 +14,12 @@ A modern, full-stack blog platform built with Next.js 14, featuring authenticati
 
 ## 📸 Screenshots
 
-> Add your application screenshots here
+<img width="1919" height="999" alt="Screenshot 2026-01-18 000406" src="https://github.com/user-attachments/assets/60bc63c4-0af8-47c9-a41d-de0d218412f5" />
+<img width="1898" height="990" alt="Screenshot 2026-01-18 000355" src="https://github.com/user-attachments/assets/d9891dfc-a6a6-4e6d-97f3-0655d6c2d699" />
+<img width="1911" height="989" alt="Screenshot 2026-01-18 000336" src="https://github.com/user-attachments/assets/7457e772-c3b1-4943-9665-0f7244c5768d" />
+<img width="1900" height="991" alt="Screenshot 2026-01-18 000326" src="https://github.com/user-attachments/assets/788c8f91-9e4a-44af-8843-08e129a2432b" />
+<img width="1892" height="994" alt="Screenshot 2026-01-18 000451" src="https://github.com/user-attachments/assets/b752734f-e561-40f9-afae-94be90df8441" />
+
 
 ## 🛠️ Tech Stack
 
@@ -38,7 +43,7 @@ Before you begin, ensure you have the following installed:
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/yourusername/nextjs-blog.git
+git clone https://github.com/ram2005024/next14-starter.git
 cd nextjs-blog
 ```
 
@@ -203,7 +208,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## 📧 Contact
 
-Your Name - Ram(Shekhar) Sharma -https://www.facebook.com/shekhar.sharma.390674/
+ Ram(Shekhar) Sharma -https://www.facebook.com/shekhar.sharma.390674/
 
 Project Link: https://next14-starter-31as.vercel.app/
 
