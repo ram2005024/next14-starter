@@ -29,7 +29,7 @@ const userSchema = new mongoose.Schema(
       default: uuidv4,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 const postSchema = new mongoose.Schema(
   {
@@ -55,7 +55,7 @@ const postSchema = new mongoose.Schema(
       type: String,
     },
   },
-  { timestamps: true }
+  { timestamps: true },
 );
 export const Post = mongoose.models.Post || mongoose.model("Post", postSchema);
 export const User = mongoose.models.User || mongoose.model("User", userSchema);

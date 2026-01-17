@@ -16,7 +16,12 @@ const login = async (credential) => {
     if (!isCorrect) {
       throw new Error("Wrong Credentials");
     }
-    return user;
+    return {
+      id: user._id.toString(),
+      userName: user.userName,
+      email: user.email,
+      isAdmin: user.isAdmin,
+    };
   } catch (error) {
     throw new Error("Error while sign in!");
   }
@@ -58,6 +63,7 @@ export const {
               userName: profile.login,
               email: profile.email,
               img: profile.avatar_url,
+              isAdmin: false,
               id: profile.id,
             });
             await newUser.save();

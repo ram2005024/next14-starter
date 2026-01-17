@@ -7,9 +7,10 @@ const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
   title: {
-    default: "Nextjs learning app",
-    template: "%s|Next.js app",
+    default: "Lets Blog",
+    template: "%s|Lets Blog",
   },
+
   description: "Next.js first app",
 };
 
