@@ -20,7 +20,7 @@ const PostUser = async ({ postData }) => {
   return (
     <div className={styles.authorField}>
       <Image
-        src={Data?.img}
+        src={Data?.img || "/noavatar.png"}
         height={50}
         width={50}
         className={styles.authorImage}

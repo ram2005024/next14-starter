@@ -12,7 +12,7 @@ const page = async () => {
     `${process.env.NEXT_PUBLIC_API_URL}/api/blog`,
     {
       cache: "no-store",
-    }
+    },
   );
   if (!blogObject.ok)
     throw new Error("Sorry data couldn't be fetched due to an error occured!");

@@ -25,7 +25,7 @@ const getData = async (slug) => {
       next: {
         revalidate: 0,
       },
-    }
+    },
   );
   console.log(res);
   if (!res.ok) {
@@ -37,6 +37,7 @@ const getData = async (slug) => {
 const page = async ({ params }) => {
   const { slug } = params;
   const postData = await getData(slug);
+  console.log("Ayo hai : ", postData);
   return (
     <div className={styles.container}>
       <div className={styles.imageCont}>
